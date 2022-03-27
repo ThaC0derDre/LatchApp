@@ -11,6 +11,14 @@
 		318A2EC527E682760080A954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC427E682760080A954 /* ContentView.swift */; };
 		318A2EC727E682770080A954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC627E682770080A954 /* Assets.xcassets */; };
 		318A2ECA27E682770080A954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC927E682770080A954 /* Preview Assets.xcassets */; };
+		31B48A9727F0F155008DBECC /* TimeTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9627F0F155008DBECC /* TimeTrackerView.swift */; };
+		31B48A9927F0F175008DBECC /* TimeRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9827F0F175008DBECC /* TimeRows.swift */; };
+		31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9B27F0F1C6008DBECC /* Buttons.swift */; };
+		31B48A9F27F0F243008DBECC /* Times.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9E27F0F243008DBECC /* Times.swift */; };
+		31B48AA127F0F26A008DBECC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48AA027F0F26A008DBECC /* RealmManager.swift */; };
+		31B48AA427F0F2B3008DBECC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 31B48AA327F0F2B3008DBECC /* Realm */; };
+		31B48AA627F0F2B3008DBECC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31B48AA527F0F2B3008DBECC /* RealmSwift */; };
+		31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,12 @@
 		318A2EC427E682760080A954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		318A2EC627E682770080A954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		318A2EC927E682770080A954 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		31B48A9627F0F155008DBECC /* TimeTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerView.swift; sourceTree = "<group>"; };
+		31B48A9827F0F175008DBECC /* TimeRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRows.swift; sourceTree = "<group>"; };
+		31B48A9B27F0F1C6008DBECC /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		31B48A9E27F0F243008DBECC /* Times.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
+		31B48AA027F0F26A008DBECC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B48AA627F0F2B3008DBECC /* RealmSwift in Frameworks */,
+				31B48AA427F0F2B3008DBECC /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +67,8 @@
 		318A2EC127E682760080A954 /* Latched */ = {
 			isa = PBXGroup;
 			children = (
+				31B48A9D27F0F231008DBECC /* Models */,
+				31B48A9527F0F13A008DBECC /* Views */,
 				318A2EC227E682760080A954 /* LatchedApp.swift */,
 				318A2EC427E682760080A954 /* ContentView.swift */,
 				318A2EC627E682770080A954 /* Assets.xcassets */,
@@ -65,6 +83,34 @@
 				318A2EC927E682770080A954 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		31B48A9527F0F13A008DBECC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				31B48A9A27F0F1A9008DBECC /* Buttons */,
+				31B48A9627F0F155008DBECC /* TimeTrackerView.swift */,
+				31B48A9827F0F175008DBECC /* TimeRows.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		31B48A9A27F0F1A9008DBECC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				31B48A9B27F0F1C6008DBECC /* Buttons.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		31B48A9D27F0F231008DBECC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31B48A9E27F0F243008DBECC /* Times.swift */,
+				31B48AA027F0F26A008DBECC /* RealmManager.swift */,
+				31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +129,10 @@
 			dependencies = (
 			);
 			name = Latched;
+			packageProductDependencies = (
+				31B48AA327F0F2B3008DBECC /* Realm */,
+				31B48AA527F0F2B3008DBECC /* RealmSwift */,
+			);
 			productName = Latched;
 			productReference = 318A2EBF27E682760080A954 /* Latched.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 318A2EB627E682760080A954;
+			packageReferences = (
+				31B48AA227F0F2B3008DBECC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 318A2EC027E682760080A954 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B48A9F27F0F243008DBECC /* Times.swift in Sources */,
+				31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */,
+				31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */,
 				318A2EC527E682760080A954 /* ContentView.swift in Sources */,
 				318A2EC327E682760080A954 /* LatchedApp.swift in Sources */,
+				31B48A9727F0F155008DBECC /* TimeTrackerView.swift in Sources */,
+				31B48AA127F0F26A008DBECC /* RealmManager.swift in Sources */,
+				31B48A9927F0F175008DBECC /* TimeRows.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +400,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31B48AA227F0F2B3008DBECC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31B48AA327F0F2B3008DBECC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B48AA227F0F2B3008DBECC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		31B48AA527F0F2B3008DBECC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B48AA227F0F2B3008DBECC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 318A2EB727E682760080A954 /* Project object */;
 }
