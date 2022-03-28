@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-struct UnanimatedButton: View {
-    var body: some View {
-        Button(""){}
-        .padding(65)
-        .background(.green)
-        .foregroundColor(.white)
-        .clipShape(Circle())
-    }
-}
-
 struct AnimatedButton: View{
     @State private var aanimationNumb = 1.0
     
@@ -26,15 +16,15 @@ struct AnimatedButton: View{
         .background(.red)
         .foregroundColor(.white)
         .clipShape(Circle())
-        // add overlay effect.
         .overlay(
             Circle()
-                .stroke(.blue)
+                .stroke(.red)
                 .scaleEffect(aanimationNumb)
                 .opacity(2 - aanimationNumb)
-                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: false), value: aanimationNumb)
+                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: false)
+                            .delay(1), value: aanimationNumb)
             )
-        // use on appear to trigger effect
+        .transition(.scale)
         .onAppear {
             aanimationNumb += 1
         }
@@ -42,16 +32,13 @@ struct AnimatedButton: View{
             aanimationNumb = 1.0
         }
     }
-        
 }
-
 
 
 
 struct UnanimatedButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            UnanimatedButton()
             AnimatedButton()
         }
     }

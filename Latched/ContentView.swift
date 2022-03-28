@@ -33,6 +33,16 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 Form{
+                    if !timeCounting {
+                    Button("Start Timer"){
+                        timerStopped    = false
+                        startTime = tFormatter.getCurrentTime()
+                        guard !timeCounting else { return }
+                        timeCounting.toggle()
+                        self.timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
+                        }
+                    }
+                    
                     if timeCounting {
                         Text("Latched at \(startTime)")
                     }
@@ -64,12 +74,14 @@ struct ContentView: View {
                     UITableViewCell.appearance().backgroundColor = UIColor.clear
                 }
                 
+                //MARK: - Button
                 
                 ZStack(alignment:.bottom) {
-                    
+                  
+
                     if timeCounting{
                         AnimatedButton()
-                        Button("End Time") {
+                        Button("END") {
                             timeCounting    = false
                             timerStopped    = true
                             endTime         = tFormatter.getCurrentTime()
@@ -92,18 +104,6 @@ struct ContentView: View {
                                 minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
                             }
                         }
-                    }else{
-                        UnanimatedButton()
-                        Button("Start Timer") {
-                            timerStopped    = false
-                            startTime = tFormatter.getCurrentTime()
-                            guard !timeCounting else { return }
-                            timeCounting.toggle()
-                            self.timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
-                        }
-                        .font(.body.bold())
-                        .padding(65)
-                        .foregroundColor(.white)
                     }
                 }
             }
@@ -111,6 +111,7 @@ struct ContentView: View {
             .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
             .navigationTitle("LATCHED")
             .navigationBarTitleDisplayMode(.inline)
+            .animation(.default, value: timeCounting)
         }
     }
 }
