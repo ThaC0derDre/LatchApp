@@ -34,12 +34,12 @@ struct ContentView: View {
             VStack {
                 Form{
                     if !timeCounting {
-                    Button("Start Timer"){
-                        timerStopped    = false
-                        startTime = tFormatter.getCurrentTime()
-                        guard !timeCounting else { return }
-                        timeCounting.toggle()
-                        self.timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
+                        Button("Start Timer"){
+                            timerStopped    = false
+                            startTime = tFormatter.getCurrentTime()
+                            guard !timeCounting else { return }
+                            timeCounting.toggle()
+                            self.timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
                         }
                     }
                     
@@ -47,12 +47,12 @@ struct ContentView: View {
                         Text("Latched at \(startTime)")
                     }
                     
-                        if timeCounting {
-                            Text(minsPassed == "0" ? "Counting Minutes..." : "Minutes passed: \(minsPassed)")
-                        }
-                        if timerStopped {
-                            Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
-                        }
+                    if timeCounting {
+                        Text(minsPassed == "0" ? "Counting Minutes..." : "Minutes passed: \(minsPassed)")
+                    }
+                    if timerStopped {
+                        Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
+                    }
                     
                     
                     Section {
@@ -75,43 +75,49 @@ struct ContentView: View {
                 }
                 
                 //MARK: - Button
-                
-                ZStack(alignment:.bottom) {
-                  
-
-                    if timeCounting{
-                        AnimatedButton()
-                        Button("END") {
-                            timeCounting    = false
-                            timerStopped    = true
-                            endTime         = tFormatter.getCurrentTime()
-                            theDate         = tFormatter.getCurrentDate()
-                            timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
-                            
-                            if timeDifference != "" {
-                                realmManager.addTime(lastFed: endTime, duration: timeDifference, currentDate: theDate)
+                VStack{
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    ZStack(alignment:.bottom) {
+                        
+                        
+                        if timeCounting{
+                            AnimatedButton()
+                            Button("END") {
+                                timeCounting    = false
+                                timerStopped    = true
+                                endTime         = tFormatter.getCurrentTime()
+                                theDate         = tFormatter.getCurrentDate()
+                                timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+                                
+                                if timeDifference != "" {
+                                    realmManager.addTime(lastFed: endTime, duration: timeDifference, currentDate: theDate)
+                                }
                             }
-                        }
-                        .font(.body.bold())
-                        .padding(65)
-                        .foregroundColor(.white)
-                        .onReceive(timer) { _ in
-                            if !timeCounting {
-                                self.timer.upstream.connect().cancel()
-                                return
-                            }else {
-                                endTime = tFormatter.getCurrentTime()
-                                minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+                            .font(.title2.bold())
+                            .padding(60)
+                            .foregroundColor(.white)
+                            .onReceive(timer) { _ in
+                                if !timeCounting {
+                                    self.timer.upstream.connect().cancel()
+                                    return
+                                }else {
+                                    endTime = tFormatter.getCurrentTime()
+                                    minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+                                }
                             }
                         }
                     }
+                    Spacer()
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
-            .navigationTitle("LATCHED")
-            .navigationBarTitleDisplayMode(.inline)
-            .animation(.default, value: timeCounting)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
+                .navigationTitle("LATCHED")
+                .navigationBarTitleDisplayMode(.inline)
+                .animation(.default, value: timeCounting)
+            
         }
     }
 }
