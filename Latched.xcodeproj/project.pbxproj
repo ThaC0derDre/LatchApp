@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3161F2E028042D9800770CD6 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 3161F2DF28042D9800770CD6 /* ReadMe.md */; };
 		318A2EC327E682760080A954 /* LatchedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC227E682760080A954 /* LatchedApp.swift */; };
 		318A2EC527E682760080A954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC427E682760080A954 /* ContentView.swift */; };
 		318A2EC727E682770080A954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC627E682770080A954 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3161F2DF28042D9800770CD6 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		318A2EBF27E682760080A954 /* Latched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		318A2EC227E682760080A954 /* LatchedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatchedApp.swift; sourceTree = "<group>"; };
 		318A2EC427E682760080A954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		318A2EB627E682760080A954 = {
 			isa = PBXGroup;
 			children = (
+				3161F2DF28042D9800770CD6 /* ReadMe.md */,
 				318A2EC127E682760080A954 /* Latched */,
 				318A2EC027E682760080A954 /* Products */,
 			);
@@ -180,6 +183,7 @@
 			files = (
 				318A2ECA27E682770080A954 /* Preview Assets.xcassets in Resources */,
 				318A2EC727E682770080A954 /* Assets.xcassets in Resources */,
+				3161F2E028042D9800770CD6 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
