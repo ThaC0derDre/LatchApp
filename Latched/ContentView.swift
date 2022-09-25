@@ -33,17 +33,12 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 Form{
-                    if !timeCounting {
-                        startTimerButton
-                    }else {
-                        beginCounter
-                    }
+                    if !timeCounting { startTimerButton } else { beginCounter }
                     
-                    if timerStopped {
-                        Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
-                    }
+                    if timerStopped { timePassed }
                     
                     viewPreviousTimes
+                    
                     .sheet(isPresented: $showTimeView) {
                         TrackTimeView()
                             .environmentObject(realmManager)
@@ -138,5 +133,9 @@ extension ContentView {
                 showTimeView.toggle()
             }
         }
+    }
+    
+    private var timePassed: Text {
+        Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
     }
 }
