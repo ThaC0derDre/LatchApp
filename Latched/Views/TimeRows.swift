@@ -10,13 +10,13 @@ import SwiftUI
 struct TimeRow: View {
     var finishedTime: String
     var totalDuration: String
-    var currentDate: String?
+    var currentDate: Date?
     
     
     var body: some View {
-        if let currentDate = currentDate {
+        if let currentDate {
         VStack{
-            Text(currentDate)
+            Text("\(currentDate.formatted(date: .abbreviated, time: .omitted))")
                 .fontWeight(.heavy)
         }
         .listRowSeparator(.hidden)

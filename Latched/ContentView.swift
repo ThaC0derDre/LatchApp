@@ -25,7 +25,7 @@ struct ContentView: View {
     @State private var timeCounting     = false
     @State private var timerStopped     = false
     @State private var tFormatter       = TimeFormatter()
-    @State private var theDate:String?
+    @State private var theDate:         Date?
     @State private var timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
     
     
@@ -34,45 +34,23 @@ struct ContentView: View {
             VStack {
                 Form{
                     if !timeCounting {
-                        Button("Start Timer"){
-                            timerStopped    = false
-                            startTime = tFormatter.getCurrentTime()
-                            guard !timeCounting else { return }
-                            timeCounting.toggle()
-                            self.timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
-                        }
+                        startTimerButton
+                    }else {
+                        beginCounter
                     }
                     
-                    if timeCounting {
-                        Text("Latched at \(startTime)")
-                    }
-                    
-                    if timeCounting {
-                        Text(minsPassed == "0" ? "Counting Minutes..." : "Minutes passed: \(minsPassed)")
-                    }
                     if timerStopped {
                         Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
                     }
                     
-                    
-                    Section {
-                        Button("View Previous Times") {
-                        }
-                        
-                        .onTapGesture {
-                            showTimeView.toggle()
-                        }
-                    }
+                    viewPreviousTimes
                     .sheet(isPresented: $showTimeView) {
                         TrackTimeView()
                             .environmentObject(realmManager)
                     }
                 }
+                
                 .preferredColorScheme(.light)
-                .onAppear {
-                    UITableView.appearance().backgroundColor = UIColor.clear
-                    UITableViewCell.appearance().backgroundColor = UIColor.clear
-                }
                 
                 //MARK: - Button
                 VStack{
@@ -88,7 +66,7 @@ struct ContentView: View {
                                 timeCounting    = false
                                 timerStopped    = true
                                 endTime         = tFormatter.getCurrentTime()
-                                theDate         = tFormatter.getCurrentDate()
+                                theDate         = Date.now
                                 timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
                                 
                                 if timeDifference != "" {
@@ -112,11 +90,12 @@ struct ContentView: View {
                     Spacer()
                 }
             }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
-                .navigationTitle("LATCHED")
-                .navigationBarTitleDisplayMode(.inline)
-                .animation(.default, value: timeCounting)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
+            .navigationTitle("LATCHED")
+            .navigationBarTitleDisplayMode(.inline)
+            .animation(.default, value: timeCounting)
+            .scrollContentBackground(.hidden)
             
         }
     }
@@ -128,5 +107,36 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+
+extension ContentView {
+    private var startTimerButton: some View {
+        Button("Start Timer"){
+            timerStopped    = false
+            startTime       = tFormatter.getCurrentTime()
+            guard !timeCounting else { return }
+            timeCounting.toggle()
+            self.timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
+        }
+    }
+    
+    private var beginCounter: some View {
+        Section {
+            Text("Latched at \(startTime)")
+            Text(minsPassed == "0" ? "Counting Minutes..." : "Minutes passed: \(minsPassed)")
+        }
+    }
+    
+    private var viewPreviousTimes : some View {
+        Section {
+            Button("View Previous Times") {
+            }
+            
+            .onTapGesture {
+                showTimeView.toggle()
+            }
+        }
     }
 }

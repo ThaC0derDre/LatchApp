@@ -12,5 +12,5 @@ class Time: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var lastFed      = ""
     @Persisted var duration     = ""
-    @Persisted var currentDate  = ""
+    @Persisted var currentDate  = Date()
 }

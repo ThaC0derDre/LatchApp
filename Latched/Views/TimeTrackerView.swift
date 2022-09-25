@@ -12,7 +12,7 @@ struct TrackTimeView: View {
     @Environment(\.dismiss) var dismiss
     @State private var lastFedAt    = ""
     @State private var durationFed  = ""
-    @State private var currentDate  = ""
+    @State private var currentDate  = Date.now
     @State private var nextDay      = ""
     @State private var newDay       = false
     
