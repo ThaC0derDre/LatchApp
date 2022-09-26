@@ -39,36 +39,29 @@ struct ContentView: View {
                     if timerStopped { timePassed }
                     
                     viewPreviousTimes
-                    
-                    .sheet(isPresented: $showTimeView) {
-                        TrackTimeView()
-                            .environmentObject(realmManager)
-                    }
+                        .sheet(isPresented: $showTimeView) {
+                            TrackTimeView()
+                                .environmentObject(realmManager)
+                        }
                 }
-                
                 .preferredColorScheme(.light)
                 
                 //MARK: - Button
-                VStack{
-                    Spacer()
-                    ZStack(alignment:.bottom) {
-                        if timeCounting{
-                            AnimatedButton()
-                                .padding(.bottom, 20)
-                            Button("END") {
-                                buttonAction()
-                            }
-                            .font(.title2.bold())
-                            .padding(80)
-                            .foregroundColor(.white)
-                            .onReceive(timer) { _ in
-                                if !timeCounting {
-                                    self.timer.upstream.connect().cancel()
-                                    return
-                                }else {
-                                    endTime = tFormatter.getCurrentTime()
-                                    minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
-                                }
+                ZStack(alignment:.bottom) {
+                    if timeCounting{
+                        AnimatedButton()
+                            .padding(.bottom, 20)
+                        Button("END") { buttonAction() }
+                        .font(.title2.bold())
+                        .padding(80)
+                        .foregroundColor(.white)
+                        .onReceive(timer) { _ in
+                            if !timeCounting {
+                                self.timer.upstream.connect().cancel()
+                                return
+                            }else {
+                                endTime = tFormatter.getCurrentTime()
+                                minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
                             }
                         }
                     }
@@ -80,7 +73,6 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .animation(.default, value: timeCounting)
             .scrollContentBackground(.hidden)
-            
         }
     }
 }
