@@ -12,7 +12,7 @@ import RealmSwift
 
 struct ContentView: View {
     
-    @StateObject var realmManager = RealmManager()
+    @StateObject var realmManager       = RealmManager()
     
     
     @State private var startTime        = ""
@@ -25,7 +25,7 @@ struct ContentView: View {
     @State private var timeCounting     = false
     @State private var timerStopped     = false
     @State private var tFormatter       = TimeFormatter()
-    @State private var theDate:         Date?
+    @State private var theDate          :Date?
     @State private var timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
     
     
@@ -33,7 +33,8 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 Form{
-                    if !timeCounting { startTimerButton } else { beginCounter }
+                    if !timeCounting { startTimerButton }
+                    else { beginCounter }
                     
                     if timerStopped { timePassed }
                     
@@ -50,26 +51,15 @@ struct ContentView: View {
                 //MARK: - Button
                 VStack{
                     Spacer()
-                    Spacer()
-                    Spacer()
                     ZStack(alignment:.bottom) {
-                        
-                        
                         if timeCounting{
                             AnimatedButton()
+                                .padding(.bottom, 20)
                             Button("END") {
-                                timeCounting    = false
-                                timerStopped    = true
-                                endTime         = tFormatter.getCurrentTime()
-                                theDate         = Date.now
-                                timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
-                                
-                                if timeDifference != "" {
-                                    realmManager.addTime(lastFed: endTime, duration: timeDifference, currentDate: theDate)
-                                }
+                                buttonAction()
                             }
                             .font(.title2.bold())
-                            .padding(60)
+                            .padding(80)
                             .foregroundColor(.white)
                             .onReceive(timer) { _ in
                                 if !timeCounting {
@@ -82,7 +72,6 @@ struct ContentView: View {
                             }
                         }
                     }
-                    Spacer()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
@@ -107,6 +96,7 @@ struct ContentView_Previews: PreviewProvider {
 
 
 extension ContentView {
+    
     private var startTimerButton: some View {
         Button("Start Timer"){
             timerStopped    = false
@@ -117,6 +107,7 @@ extension ContentView {
         }
     }
     
+    
     private var beginCounter: some View {
         Section {
             Text("Latched at \(startTime)")
@@ -124,18 +115,31 @@ extension ContentView {
         }
     }
     
+    
     private var viewPreviousTimes : some View {
         Section {
-            Button("View Previous Times") {
-            }
-            
-            .onTapGesture {
-                showTimeView.toggle()
-            }
+            Button("View Previous Times") { }
+                .onTapGesture {
+                    showTimeView.toggle()
+                }
         }
     }
     
+    
     private var timePassed: Text {
         Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
+    }
+    
+    
+    private func buttonAction() {
+        timeCounting    = false
+        timerStopped    = true
+        endTime         = tFormatter.getCurrentTime()
+        theDate         = Date.now
+        timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+        
+        if timeDifference != "" {
+            realmManager.addTime(lastFed: endTime, duration: timeDifference, currentDate: theDate)
+        }
     }
 }
