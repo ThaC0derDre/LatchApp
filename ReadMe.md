@@ -1,6 +1,6 @@
 
 # Latched
-Simple app created to help wife track her feeding sessions.
+Simple app created to help wife track her nursing sessions.
 
 App created with no help or tutorial videos. Hence why it looks so basic haha
 
