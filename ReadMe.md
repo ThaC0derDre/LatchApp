@@ -13,6 +13,4 @@ App created with no help or tutorial videos. Hence why it looks so basic haha
 
 
 
-* Edit Overall UI.
-
-* Edit Previous View.
+* Edit Tracker, to assign by Months.
