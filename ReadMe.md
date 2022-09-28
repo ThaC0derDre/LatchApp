@@ -13,4 +13,4 @@ App created with no help or tutorial videos. Hence why it looks so basic haha
 
 
 
-* Edit Tracker, to assign by Months.
+* Edit Trackerd Times View, to assign by Months.
