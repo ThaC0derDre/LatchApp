@@ -1,18 +1,16 @@
 
 # Latched
-Simple app created to help wife track her feeding sessions.
+Simple app created to help wife track her nursing sessions.
 
 App created with no help or tutorial videos. Hence why it looks so basic haha
 
 ## Demo
 
 
-![](https://media.giphy.com/media/jXHfOmf2RqTFlxpwj8/giphy.gif)     ![](https://media.giphy.com/media/IIdd1AoWEHOp8d0TTo/giphy.gif)
+![](https://media.giphy.com/media/jXHfOmf2RqTFlxpwj8/giphy.gif)
 
 ## TO DO
 
 
 
-* Edit Overall UI.
-
-* Edit Previous View.
+* Edit Tracked Times View, to assign by Months.
