@@ -9,9 +9,7 @@ import SwiftUI
 import RealmSwift
 
 
-
 struct ContentView: View {
-    
     @StateObject var realmManager       = RealmManager()
     
     
@@ -19,7 +17,6 @@ struct ContentView: View {
     @State private var endTime          = ""
     @State private var timeDifference   = ""
     @State private var minsPassed       = ""
-    
     
     @State private var showTimeView     = false
     @State private var timeCounting     = false
@@ -88,7 +85,6 @@ struct ContentView_Previews: PreviewProvider {
 
 
 extension ContentView {
-    
     private var startTimerButton: some View {
         Button("Start Timer"){
             timerStopped    = false
