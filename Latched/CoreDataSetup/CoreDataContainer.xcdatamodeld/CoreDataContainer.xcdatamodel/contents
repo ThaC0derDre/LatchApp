@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DayEntity" representedClassName="DayEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="months" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthEntity" inverseName="days" inverseEntity="MonthEntity"/>
+        <relationship name="times" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TimeEntity" inverseName="day" inverseEntity="TimeEntity"/>
+    </entity>
+    <entity name="MonthEntity" representedClassName="MonthEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DayEntity" inverseName="months" inverseEntity="DayEntity"/>
+        <relationship name="times" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TimeEntity" inverseName="month" inverseEntity="TimeEntity"/>
+    </entity>
+    <entity name="TimeEntity" representedClassName="TimeEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="timeEnded" optional="YES" attributeType="String"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayEntity" inverseName="times" inverseEntity="DayEntity"/>
+        <relationship name="month" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthEntity" inverseName="times" inverseEntity="MonthEntity"/>
+    </entity>
+</model>

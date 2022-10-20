@@ -19,7 +19,7 @@ class RealmManager : ObservableObject {
     
     func openRealm() {
         do {
-            let config = Realm.Configuration(schemaVersion: 1)
+            let config = Realm.Configuration(schemaVersion: 2)
             
             Realm.Configuration.defaultConfiguration = config
             
@@ -51,9 +51,7 @@ class RealmManager : ObservableObject {
             let allTimes = localRealm.objects(Time.self).sorted(byKeyPath: "id", ascending: false)
             times = []
             allTimes.forEach { time in
-                if time.currentDate < Date.now.twoDaysOut {
                     times.append(time)
-                }
             }
         }
     }

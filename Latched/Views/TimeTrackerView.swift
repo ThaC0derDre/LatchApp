@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TrackTimeView: View {
+    @ObservedResults(Time.self) var times
     @EnvironmentObject var  realmManager: RealmManager
     @Environment(\.dismiss) var dismiss
     @State private var lastFedAt    = ""
@@ -19,16 +21,13 @@ struct TrackTimeView: View {
     
     var body: some View {
         VStack {
-            Text("Time Tracker")
-                .font(.title3).bold()
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
+            textLabel
             
             List {
-                ForEach(realmManager.times, id: \.id) {
-                    time in
+                ForEach(realmManager.times, id: \.id) { time in
                     if !time.isInvalidated {
-                        TimeRow(finishedTime: time.lastFed, totalDuration: time.duration, currentDate: time.currentDate)
+                        TimeRow(finishedTime: time.lastFed, totalDuration: time.duration, currentDate: time.currentDate.displayDate)
+                            
                             .swipeActions(edge: .trailing) {
                                 Button(role: .destructive) {
                                     realmManager.deleteTime(id: time.id)
@@ -38,6 +37,7 @@ struct TrackTimeView: View {
                             }
                     }
                 }
+//                .onDelete(perform: $times.remove)
             }
             .onAppear {
                 UITableView.appearance().backgroundColor = UIColor.clear
@@ -64,5 +64,15 @@ struct TrackTimeView_Previews: PreviewProvider {
     static var previews: some View {
         TrackTimeView()
             .environmentObject(RealmManager())
+    }
+}
+
+
+extension TrackTimeView {
+    private var textLabel : some View {
+        Text("Time Tracker")
+            .font(.title3).bold()
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
