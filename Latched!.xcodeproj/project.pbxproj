@@ -8,42 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		3161F2E028042D9800770CD6 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 3161F2DF28042D9800770CD6 /* ReadMe.md */; };
+		317C3DAE290459E100D56B00 /* DayEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAA290459E100D56B00 /* DayEntity+CoreDataClass.swift */; };
+		317C3DAF290459E100D56B00 /* DayEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAB290459E100D56B00 /* DayEntity+CoreDataProperties.swift */; };
+		317C3DB0290459E100D56B00 /* TimeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAC290459E100D56B00 /* TimeEntity+CoreDataClass.swift */; };
+		317C3DB1290459E100D56B00 /* TimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAD290459E100D56B00 /* TimeEntity+CoreDataProperties.swift */; };
 		3181C9EC28DFCBBD0084313F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181C9EB28DFCBBD0084313F /* Date+Ext.swift */; };
 		318A2EC327E682760080A954 /* LatchedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC227E682760080A954 /* LatchedApp.swift */; };
 		318A2EC527E682760080A954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC427E682760080A954 /* ContentView.swift */; };
 		318A2EC727E682770080A954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC627E682770080A954 /* Assets.xcassets */; };
 		318A2ECA27E682770080A954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC927E682770080A954 /* Preview Assets.xcassets */; };
+		31A527F029010989001FCA65 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A527EF29010989001FCA65 /* DateView.swift */; };
 		31AB420728FBC550002800B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 31AB420628FBC550002800B5 /* Realm */; };
 		31AB420928FBC550002800B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31AB420828FBC550002800B5 /* RealmSwift */; };
 		31AB420C290084F1002800B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB420B290084F1002800B5 /* CoreDataManager.swift */; };
-		31AB420E290086BD002800B5 /* CoreDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB420D290086BD002800B5 /* CoreDataVM.swift */; };
-		31AB42102900872F002800B5 /* WouldBeAppp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB420F2900872F002800B5 /* WouldBeAppp.swift */; };
 		31AB4213290087C3002800B5 /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31AB4211290087C3002800B5 /* CoreDataContainer.xcdatamodeld */; };
-		31B48A9727F0F155008DBECC /* TimeTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9627F0F155008DBECC /* TimeTrackerView.swift */; };
-		31B48A9927F0F175008DBECC /* TimeRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9827F0F175008DBECC /* TimeRows.swift */; };
 		31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9B27F0F1C6008DBECC /* Buttons.swift */; };
 		31B48A9F27F0F243008DBECC /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9E27F0F243008DBECC /* Time.swift */; };
-		31B48AA127F0F26A008DBECC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48AA027F0F26A008DBECC /* RealmManager.swift */; };
 		31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3161F2DF28042D9800770CD6 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		317C3DAA290459E100D56B00 /* DayEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		317C3DAB290459E100D56B00 /* DayEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		317C3DAC290459E100D56B00 /* TimeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		317C3DAD290459E100D56B00 /* TimeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		3181C9EB28DFCBBD0084313F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		318A2EBF27E682760080A954 /* Latched!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latched!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318A2EC227E682760080A954 /* LatchedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatchedApp.swift; sourceTree = "<group>"; };
 		318A2EC427E682760080A954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		318A2EC627E682770080A954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		318A2EC927E682770080A954 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		31A527EF29010989001FCA65 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		31AB420B290084F1002800B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		31AB420D290086BD002800B5 /* CoreDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataVM.swift; sourceTree = "<group>"; };
-		31AB420F2900872F002800B5 /* WouldBeAppp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WouldBeAppp.swift; sourceTree = "<group>"; };
 		31AB4212290087C3002800B5 /* CoreDataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataContainer.xcdatamodel; sourceTree = "<group>"; };
-		31B48A9627F0F155008DBECC /* TimeTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerView.swift; sourceTree = "<group>"; };
-		31B48A9827F0F175008DBECC /* TimeRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRows.swift; sourceTree = "<group>"; };
 		31B48A9B27F0F1C6008DBECC /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		31B48A9E27F0F243008DBECC /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
-		31B48AA027F0F26A008DBECC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +70,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		311F370428F898E70000F1DC /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				318A2EC427E682760080A954 /* ContentView.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		318A2EB627E682760080A954 = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +92,7 @@
 			children = (
 				31AB420A290084C6002800B5 /* CoreDataSetup */,
 				318A2EC227E682760080A954 /* LatchedApp.swift */,
-				31B48A9D27F0F231008DBECC /* Models */,
 				31B48A9527F0F13A008DBECC /* Views */,
-				311F370428F898E70000F1DC /* ViewModels */,
 				311F370128F8807E0000F1DC /* Utilities */,
 				318A2EC827E682770080A954 /* Preview Content */,
 			);
@@ -120,9 +110,11 @@
 		31AB420A290084C6002800B5 /* CoreDataSetup */ = {
 			isa = PBXGroup;
 			children = (
+				317C3DAA290459E100D56B00 /* DayEntity+CoreDataClass.swift */,
+				317C3DAB290459E100D56B00 /* DayEntity+CoreDataProperties.swift */,
+				317C3DAC290459E100D56B00 /* TimeEntity+CoreDataClass.swift */,
+				317C3DAD290459E100D56B00 /* TimeEntity+CoreDataProperties.swift */,
 				31AB420B290084F1002800B5 /* CoreDataManager.swift */,
-				31AB420D290086BD002800B5 /* CoreDataVM.swift */,
-				31AB420F2900872F002800B5 /* WouldBeAppp.swift */,
 				31AB4211290087C3002800B5 /* CoreDataContainer.xcdatamodeld */,
 			);
 			path = CoreDataSetup;
@@ -131,9 +123,10 @@
 		31B48A9527F0F13A008DBECC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31B48A9D27F0F231008DBECC /* Models */,
 				31B48A9A27F0F1A9008DBECC /* Buttons */,
-				31B48A9627F0F155008DBECC /* TimeTrackerView.swift */,
-				31B48A9827F0F175008DBECC /* TimeRows.swift */,
+				318A2EC427E682760080A954 /* ContentView.swift */,
+				31A527EF29010989001FCA65 /* DateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				31B48A9E27F0F243008DBECC /* Time.swift */,
-				31B48AA027F0F26A008DBECC /* RealmManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,18 +226,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3181C9EC28DFCBBD0084313F /* Date+Ext.swift in Sources */,
+				317C3DAE290459E100D56B00 /* DayEntity+CoreDataClass.swift in Sources */,
 				31B48A9F27F0F243008DBECC /* Time.swift in Sources */,
+				31A527F029010989001FCA65 /* DateView.swift in Sources */,
 				31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */,
+				317C3DB0290459E100D56B00 /* TimeEntity+CoreDataClass.swift in Sources */,
 				31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */,
 				318A2EC527E682760080A954 /* ContentView.swift in Sources */,
 				318A2EC327E682760080A954 /* LatchedApp.swift in Sources */,
-				31B48A9727F0F155008DBECC /* TimeTrackerView.swift in Sources */,
-				31B48AA127F0F26A008DBECC /* RealmManager.swift in Sources */,
+				317C3DB1290459E100D56B00 /* TimeEntity+CoreDataProperties.swift in Sources */,
+				317C3DAF290459E100D56B00 /* DayEntity+CoreDataProperties.swift in Sources */,
 				31AB420C290084F1002800B5 /* CoreDataManager.swift in Sources */,
-				31AB420E290086BD002800B5 /* CoreDataVM.swift in Sources */,
-				31B48A9927F0F175008DBECC /* TimeRows.swift in Sources */,
 				31AB4213290087C3002800B5 /* CoreDataContainer.xcdatamodeld in Sources */,
-				31AB42102900872F002800B5 /* WouldBeAppp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

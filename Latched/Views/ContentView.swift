@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-import RealmSwift
-
+import CoreData
 
 struct ContentView: View {
-    @StateObject var realmManager       = RealmManager()
-    
-    
+    @Environment(\.managedObjectContext) private var moc
     @State private var startTime        = ""
     @State private var endTime          = ""
     @State private var timeDifference   = ""
@@ -22,8 +19,11 @@ struct ContentView: View {
     @State private var timeCounting     = false
     @State private var timerStopped     = false
     @State private var tFormatter       = TimeFormatter()
-    @State private var theDate          :Date?
     @State private var timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.wrappedDate), // Day
+//        SortDescriptor(\.wrappedTimes) // If same day, sort by time
+    ]) var days: FetchedResults<DayEntity>
     
     
     var body: some View {
@@ -37,8 +37,7 @@ struct ContentView: View {
                     
                     viewPreviousTimes
                         .sheet(isPresented: $showTimeView) {
-                            TrackTimeView()
-                                .environmentObject(realmManager)
+                            DateView(days: days)
                         }
                 }
                 .preferredColorScheme(.light)
@@ -123,11 +122,32 @@ extension ContentView {
         timeCounting    = false
         timerStopped    = true
         endTime         = tFormatter.getCurrentTime()
-        theDate         = Date.now
         timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
         
         if timeDifference != "" {
-            realmManager.addTime(lastFed: endTime, duration: timeDifference, currentDate: theDate)
+            if days.last?.date?.displayDate != Date.now.displayDate{
+                addDay(Date.now)
+            }
+            addTime(duration: timeDifference, timeEnded: endTime)
+            try? moc.save()
         }
+        func addDay(_ day: Date) {
+            let newDay = DayEntity(context: moc)
+            newDay.date = day
+            
+            
+        }
+        
+        func addTime(duration: String, timeEnded: String) {
+            let newTime = TimeEntity(context: moc)
+            newTime.duration = duration
+            newTime.timeEnded = timeEnded
+            newTime.dateAdded = Date.now
+            
+            // how to add time to DayEntitiy?
+            newTime.day = days.last
+        }
+        
+        
     }
 }

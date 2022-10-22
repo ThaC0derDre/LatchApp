@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct LatchedApp: App {
+    @StateObject private var manager = CoreDataManager()
     var body: some Scene {
         WindowGroup {
-            WouldBeAppp()
+            ContentView()
+                .environment(\.managedObjectContext, manager.container.viewContext)
         }
     }
 }
