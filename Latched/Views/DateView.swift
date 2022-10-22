@@ -23,10 +23,10 @@ struct DateView: View {
                     trackedTimes()
                 }
                 dismissButton()
-                .onAppear {
-                    UITableView.appearance().backgroundColor = UIColor.clear
-                    UITableViewCell.appearance().backgroundColor = UIColor.clear
-                }
+                    .onAppear {
+                        UITableView.appearance().backgroundColor = UIColor.clear
+                        UITableViewCell.appearance().backgroundColor = UIColor.clear
+                    }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
@@ -53,24 +53,26 @@ extension DateView{
         List{
             Section{
                 ForEach(days, id: \.self){ day in
-                    Text(day.wrappedDateInfo)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    ForEach(day.wrappedTimes, id: \.self){ time in
-                            HStack {
+                    DisclosureGroup(day.wrappedDateInfo){
+                        ForEach(day.wrappedTimes, id: \.self){ time in
+                            HStack(alignment: .firstTextBaseline) {
                                 Text(time.wrappedDuration) +
                                 Text(time.wrappedDuration == "1" ? " Minute" : " Minutes")
                                 Spacer()
                                 Text("Finished at: ").bold() +
-                                     Text(time.wrappedTimeEnded)
-                            }
+                                Text(time.wrappedTimeEnded)
+                            }.font(.subheadline)
+                        }
+                        .onDelete { index in
+                            deleteTime(indexs: index, for: day)
+                        }
                     }
-                    .onDelete { index in
-                        deleteTime(indexs: index, for: day)
-                    }
+                    .animation(.default)
+                    .font(.title2)
+                    .fontWeight(.bold)
                 }
                 .onDelete(perform: deleteDay)
+                
             }
         }
     }
