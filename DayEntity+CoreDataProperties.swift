@@ -17,17 +17,22 @@ extension DayEntity {
     }
 
     @NSManaged public var date: Date?
+    @NSManaged public var dateInfo: String?
     @NSManaged public var times: NSSet?
 
     public var wrappedDate: Date {
         date ?? Date.now
     }
     
+    public var wrappedDateInfo: String {
+        dateInfo ?? "Unknown"
+    }
+    
     public var wrappedTimes: [TimeEntity] {
-        let sortedTimes = times as? Set<TimeEntity> ?? []
+        let set = times as? Set<TimeEntity> ?? []
         
-        return sortedTimes.sorted {
-            $0.wrappedDateAdded < $1.wrappedDateAdded
+        return set.sorted {
+            $0.wrappedDateAdded > $1.wrappedDateAdded
         }
     }
     

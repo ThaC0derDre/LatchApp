@@ -30,18 +30,18 @@ struct DateView: View {
                     List{
                         Section{
                             ForEach(days, id: \.self){ day in
-                                Text(day.date?.displayDate ?? "Error Recording Day")
+                                Text(day.wrappedDateInfo)
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                if let times = day.times?.allObjects as? [TimeEntity]{
-                                    ForEach(times, id: \.self){ time in
+                                
+                                ForEach(day.wrappedTimes, id: \.self){ time in
                                         HStack {
-                                            Text(time.duration ?? "5 minutes") +
-                                            Text(time.duration == "1" ? " Minute" : " Minutes")
+                                            Text(time.wrappedDuration) +
+                                            Text(time.wrappedDuration == "1" ? " Minute" : " Minutes")
                                             Spacer()
-                                            Text("Finished at: \(time.timeEnded ?? "12:31p")")
+                                            Text("Finished at: \(time.wrappedTimeEnded)")
                                         }
-                                    }
+//
 //                                    .onDelete(perform: deleteDay)
                                 }
                                 

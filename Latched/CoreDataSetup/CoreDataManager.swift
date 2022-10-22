@@ -8,28 +8,16 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
-    static let instance = CoreDataManager()
+class CoreDataManager: ObservableObject {
+    // container loads models, to access data.
+    let container = NSPersistentContainer(name: "CoreDataContainer")
     
-    let container : NSPersistentContainer
-    let context : NSManagedObjectContext
-    
-    init() {
-        container = NSPersistentContainer(name: "CoreDataContainer")
-        container.loadPersistentStores { desc, error in
-            if let error{
-                print("Error loading CoreData Container: \(error)")
+    init(){
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                print("CoreData failed to load: \(error.localizedDescription)")
             }
         }
-        context = container.viewContext
-    }
-    
-    func save() {
-        do {
-            try context.save()
-            print("Saved Successfully")
-        } catch let error {
-            print("Error saving CoreData: \(error.localizedDescription)")
-        }
+        self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
     }
 }

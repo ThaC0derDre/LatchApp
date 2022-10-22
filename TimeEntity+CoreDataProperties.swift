@@ -16,21 +16,21 @@ extension TimeEntity {
         return NSFetchRequest<TimeEntity>(entityName: "TimeEntity")
     }
 
+    @NSManaged public var dateAdded: Date?
     @NSManaged public var duration: String?
     @NSManaged public var timeEnded: String?
-    @NSManaged public var dateAdded: Date?
     @NSManaged public var day: DayEntity?
 
+    public var wrappedDateAdded: Date {
+        dateAdded ?? Date.now
+    }
+    
     public var wrappedDuration: String {
-        duration ?? "Unknown Duration"
+        duration ?? "Unknown"
     }
     
     public var wrappedTimeEnded: String {
-        timeEnded ?? "Unknown Time Ended"
-    }
-    
-    public var wrappedDateAdded: Date {
-        dateAdded ?? Date.now
+        timeEnded ?? "Unknown"
     }
     
     

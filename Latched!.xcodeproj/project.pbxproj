@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3161F2E028042D9800770CD6 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 3161F2DF28042D9800770CD6 /* ReadMe.md */; };
-		317C3DAE290459E100D56B00 /* DayEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAA290459E100D56B00 /* DayEntity+CoreDataClass.swift */; };
-		317C3DAF290459E100D56B00 /* DayEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAB290459E100D56B00 /* DayEntity+CoreDataProperties.swift */; };
-		317C3DB0290459E100D56B00 /* TimeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAC290459E100D56B00 /* TimeEntity+CoreDataClass.swift */; };
-		317C3DB1290459E100D56B00 /* TimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C3DAD290459E100D56B00 /* TimeEntity+CoreDataProperties.swift */; };
 		3181C9EC28DFCBBD0084313F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181C9EB28DFCBBD0084313F /* Date+Ext.swift */; };
 		318A2EC327E682760080A954 /* LatchedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC227E682760080A954 /* LatchedApp.swift */; };
 		318A2EC527E682760080A954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A2EC427E682760080A954 /* ContentView.swift */; };
@@ -25,14 +21,14 @@
 		31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9B27F0F1C6008DBECC /* Buttons.swift */; };
 		31B48A9F27F0F243008DBECC /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9E27F0F243008DBECC /* Time.swift */; };
 		31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */; };
+		31DD3ACA290472A700DD8751 /* TimeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC6290472A700DD8751 /* TimeEntity+CoreDataClass.swift */; };
+		31DD3ACB290472A700DD8751 /* TimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC7290472A700DD8751 /* TimeEntity+CoreDataProperties.swift */; };
+		31DD3ACC290472A700DD8751 /* DayEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC8290472A700DD8751 /* DayEntity+CoreDataClass.swift */; };
+		31DD3ACD290472A700DD8751 /* DayEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC9290472A700DD8751 /* DayEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3161F2DF28042D9800770CD6 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		317C3DAA290459E100D56B00 /* DayEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		317C3DAB290459E100D56B00 /* DayEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		317C3DAC290459E100D56B00 /* TimeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		317C3DAD290459E100D56B00 /* TimeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		3181C9EB28DFCBBD0084313F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		318A2EBF27E682760080A954 /* Latched!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latched!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318A2EC227E682760080A954 /* LatchedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatchedApp.swift; sourceTree = "<group>"; };
@@ -45,6 +41,10 @@
 		31B48A9B27F0F1C6008DBECC /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		31B48A9E27F0F243008DBECC /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		31DD3AC6290472A700DD8751 /* TimeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		31DD3AC7290472A700DD8751 /* TimeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		31DD3AC8290472A700DD8751 /* DayEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		31DD3AC9290472A700DD8751 /* DayEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +110,10 @@
 		31AB420A290084C6002800B5 /* CoreDataSetup */ = {
 			isa = PBXGroup;
 			children = (
-				317C3DAA290459E100D56B00 /* DayEntity+CoreDataClass.swift */,
-				317C3DAB290459E100D56B00 /* DayEntity+CoreDataProperties.swift */,
-				317C3DAC290459E100D56B00 /* TimeEntity+CoreDataClass.swift */,
-				317C3DAD290459E100D56B00 /* TimeEntity+CoreDataProperties.swift */,
+				31DD3AC6290472A700DD8751 /* TimeEntity+CoreDataClass.swift */,
+				31DD3AC7290472A700DD8751 /* TimeEntity+CoreDataProperties.swift */,
+				31DD3AC8290472A700DD8751 /* DayEntity+CoreDataClass.swift */,
+				31DD3AC9290472A700DD8751 /* DayEntity+CoreDataProperties.swift */,
 				31AB420B290084F1002800B5 /* CoreDataManager.swift */,
 				31AB4211290087C3002800B5 /* CoreDataContainer.xcdatamodeld */,
 			);
@@ -226,18 +226,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3181C9EC28DFCBBD0084313F /* Date+Ext.swift in Sources */,
-				317C3DAE290459E100D56B00 /* DayEntity+CoreDataClass.swift in Sources */,
 				31B48A9F27F0F243008DBECC /* Time.swift in Sources */,
 				31A527F029010989001FCA65 /* DateView.swift in Sources */,
+				31DD3ACA290472A700DD8751 /* TimeEntity+CoreDataClass.swift in Sources */,
 				31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */,
-				317C3DB0290459E100D56B00 /* TimeEntity+CoreDataClass.swift in Sources */,
+				31DD3ACD290472A700DD8751 /* DayEntity+CoreDataProperties.swift in Sources */,
 				31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */,
 				318A2EC527E682760080A954 /* ContentView.swift in Sources */,
 				318A2EC327E682760080A954 /* LatchedApp.swift in Sources */,
-				317C3DB1290459E100D56B00 /* TimeEntity+CoreDataProperties.swift in Sources */,
-				317C3DAF290459E100D56B00 /* DayEntity+CoreDataProperties.swift in Sources */,
 				31AB420C290084F1002800B5 /* CoreDataManager.swift in Sources */,
 				31AB4213290087C3002800B5 /* CoreDataContainer.xcdatamodeld in Sources */,
+				31DD3ACB290472A700DD8751 /* TimeEntity+CoreDataProperties.swift in Sources */,
+				31DD3ACC290472A700DD8751 /* DayEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

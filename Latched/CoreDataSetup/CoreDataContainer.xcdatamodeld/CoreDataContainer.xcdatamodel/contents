@@ -2,7 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DayEntity" representedClassName="DayEntity" syncable="YES">
         <attribute name="date" attributeType="Date" defaultDateTimeInterval="0" usesScalarValueType="NO"/>
+        <attribute name="dateInfo" optional="YES" attributeType="String"/>
         <relationship name="times" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TimeEntity" inverseName="day" inverseEntity="TimeEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="dateInfo"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="TimeEntity" representedClassName="TimeEntity" syncable="YES">
         <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

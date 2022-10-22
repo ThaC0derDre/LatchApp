@@ -21,10 +21,8 @@ struct ContentView: View {
     @State private var tFormatter       = TimeFormatter()
     @State private var timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
     @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.wrappedDate), // Day
-//        SortDescriptor(\.wrappedTimes) // If same day, sort by time
+        SortDescriptor(\.date)
     ]) var days: FetchedResults<DayEntity>
-    
     
     var body: some View {
         NavigationView{
@@ -125,29 +123,21 @@ extension ContentView {
         timeDifference  = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
         
         if timeDifference != "" {
-            if days.last?.date?.displayDate != Date.now.displayDate{
-                addDay(Date.now)
-            }
-            addTime(duration: timeDifference, timeEnded: endTime)
-            try? moc.save()
-        }
-        func addDay(_ day: Date) {
-            let newDay = DayEntity(context: moc)
-            newDay.date = day
-            
-            
+            addRecord()
         }
         
-        func addTime(duration: String, timeEnded: String) {
+        func addRecord(){
             let newTime = TimeEntity(context: moc)
-            newTime.duration = duration
-            newTime.timeEnded = timeEnded
+            newTime.timeEnded = endTime
+            newTime.duration = timeDifference
             newTime.dateAdded = Date.now
             
-            // how to add time to DayEntitiy?
-            newTime.day = days.last
+            newTime.day = DayEntity(context: moc)
+            newTime.day?.date = Date.now
+            newTime.day?.dateInfo = Date.now.displayDate
+            
+            try? moc.save()
         }
-        
         
     }
 }
