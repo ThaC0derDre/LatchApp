@@ -14,17 +14,15 @@
 		318A2EC727E682770080A954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC627E682770080A954 /* Assets.xcassets */; };
 		318A2ECA27E682770080A954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A2EC927E682770080A954 /* Preview Assets.xcassets */; };
 		31A527F029010989001FCA65 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A527EF29010989001FCA65 /* DateView.swift */; };
-		31AB420728FBC550002800B5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 31AB420628FBC550002800B5 /* Realm */; };
-		31AB420928FBC550002800B5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31AB420828FBC550002800B5 /* RealmSwift */; };
 		31AB420C290084F1002800B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB420B290084F1002800B5 /* CoreDataManager.swift */; };
 		31AB4213290087C3002800B5 /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31AB4211290087C3002800B5 /* CoreDataContainer.xcdatamodeld */; };
-		31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9B27F0F1C6008DBECC /* Buttons.swift */; };
-		31B48A9F27F0F243008DBECC /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9E27F0F243008DBECC /* Time.swift */; };
+		31B48A9C27F0F1C6008DBECC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48A9B27F0F1C6008DBECC /* Button.swift */; };
 		31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */; };
 		31DD3ACA290472A700DD8751 /* TimeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC6290472A700DD8751 /* TimeEntity+CoreDataClass.swift */; };
 		31DD3ACB290472A700DD8751 /* TimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC7290472A700DD8751 /* TimeEntity+CoreDataProperties.swift */; };
 		31DD3ACC290472A700DD8751 /* DayEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC8290472A700DD8751 /* DayEntity+CoreDataClass.swift */; };
 		31DD3ACD290472A700DD8751 /* DayEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3AC9290472A700DD8751 /* DayEntity+CoreDataProperties.swift */; };
+		31DD3ACF290495BB00DD8751 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DD3ACE290495BB00DD8751 /* CellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,13 +36,13 @@
 		31A527EF29010989001FCA65 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		31AB420B290084F1002800B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		31AB4212290087C3002800B5 /* CoreDataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataContainer.xcdatamodel; sourceTree = "<group>"; };
-		31B48A9B27F0F1C6008DBECC /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		31B48A9E27F0F243008DBECC /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		31B48A9B27F0F1C6008DBECC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		31B48AA727F0F2CA008DBECC /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		31DD3AC6290472A700DD8751 /* TimeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		31DD3AC7290472A700DD8751 /* TimeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		31DD3AC8290472A700DD8751 /* DayEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		31DD3AC9290472A700DD8751 /* DayEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		31DD3ACE290495BB00DD8751 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AB420928FBC550002800B5 /* RealmSwift in Frameworks */,
-				31AB420728FBC550002800B5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,10 +119,10 @@
 		31B48A9527F0F13A008DBECC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				31B48A9D27F0F231008DBECC /* Models */,
 				31B48A9A27F0F1A9008DBECC /* Buttons */,
 				318A2EC427E682760080A954 /* ContentView.swift */,
 				31A527EF29010989001FCA65 /* DateView.swift */,
+				31DD3ACE290495BB00DD8751 /* CellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,17 +130,9 @@
 		31B48A9A27F0F1A9008DBECC /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				31B48A9B27F0F1C6008DBECC /* Buttons.swift */,
+				31B48A9B27F0F1C6008DBECC /* Button.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		31B48A9D27F0F231008DBECC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				31B48A9E27F0F243008DBECC /* Time.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +152,6 @@
 			);
 			name = "Latched!";
 			packageProductDependencies = (
-				31AB420628FBC550002800B5 /* Realm */,
-				31AB420828FBC550002800B5 /* RealmSwift */,
 			);
 			productName = Latched;
 			productReference = 318A2EBF27E682760080A954 /* Latched!.app */;
@@ -196,7 +182,6 @@
 			);
 			mainGroup = 318A2EB627E682760080A954;
 			packageReferences = (
-				31AB420528FBC550002800B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 318A2EC027E682760080A954 /* Products */;
 			projectDirPath = "";
@@ -226,15 +211,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3181C9EC28DFCBBD0084313F /* Date+Ext.swift in Sources */,
-				31B48A9F27F0F243008DBECC /* Time.swift in Sources */,
 				31A527F029010989001FCA65 /* DateView.swift in Sources */,
 				31DD3ACA290472A700DD8751 /* TimeEntity+CoreDataClass.swift in Sources */,
 				31B48AA827F0F2CA008DBECC /* TimeFormatter.swift in Sources */,
 				31DD3ACD290472A700DD8751 /* DayEntity+CoreDataProperties.swift in Sources */,
-				31B48A9C27F0F1C6008DBECC /* Buttons.swift in Sources */,
+				31B48A9C27F0F1C6008DBECC /* Button.swift in Sources */,
 				318A2EC527E682760080A954 /* ContentView.swift in Sources */,
 				318A2EC327E682760080A954 /* LatchedApp.swift in Sources */,
 				31AB420C290084F1002800B5 /* CoreDataManager.swift in Sources */,
+				31DD3ACF290495BB00DD8751 /* CellView.swift in Sources */,
 				31AB4213290087C3002800B5 /* CoreDataContainer.xcdatamodeld in Sources */,
 				31DD3ACB290472A700DD8751 /* TimeEntity+CoreDataProperties.swift in Sources */,
 				31DD3ACC290472A700DD8751 /* DayEntity+CoreDataClass.swift in Sources */,
@@ -454,30 +439,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		31AB420528FBC550002800B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		31AB420628FBC550002800B5 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 31AB420528FBC550002800B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		31AB420828FBC550002800B5 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 31AB420528FBC550002800B5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		31AB4211290087C3002800B5 /* CoreDataContainer.xcdatamodeld */ = {

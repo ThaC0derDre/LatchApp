@@ -31,6 +31,7 @@ struct DateView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
             .navigationTitle("Track Log")
+            .scrollContentBackground(.hidden)
         }
     }
 }

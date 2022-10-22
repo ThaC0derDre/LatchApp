@@ -40,26 +40,7 @@ struct ContentView: View {
                 }
                 .preferredColorScheme(.light)
                 
-                //MARK: - Button
-                ZStack(alignment:.bottom) {
-                    if timeCounting{
-                        AnimatedButton()
-                            .padding(.bottom, 20)
-                        Button("END") { buttonAction() }
-                        .font(.title2.bold())
-                        .padding(80)
-                        .foregroundColor(.white)
-                        .onReceive(timer) { _ in
-                            if !timeCounting {
-                                self.timer.upstream.connect().cancel()
-                                return
-                            }else {
-                                endTime = tFormatter.getCurrentTime()
-                                minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
-                            }
-                        }
-                    }
-                }
+                trackingButton()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
@@ -115,6 +96,27 @@ extension ContentView {
         Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
     }
     
+    private func trackingButton() -> some View {
+        ZStack(alignment:.bottom) {
+            if timeCounting{
+                AnimatedButton()
+                    .padding(.bottom, 20)
+                Button("END") { buttonAction() }
+                .font(.title2.bold())
+                .padding(80)
+                .foregroundColor(.white)
+                .onReceive(timer) { _ in
+                    if !timeCounting {
+                        self.timer.upstream.connect().cancel()
+                        return
+                    }else {
+                        endTime = tFormatter.getCurrentTime()
+                        minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+                    }
+                }
+            }
+        }
+    }
     
     private func buttonAction() {
         timeCounting    = false
