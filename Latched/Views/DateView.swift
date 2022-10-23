@@ -61,7 +61,10 @@ extension DateView{
                                 Spacer()
                                 Text("Finished at: ").bold() +
                                 Text(time.wrappedTimeEnded)
-                            }.font(.subheadline)
+                            }
+                            .font(.subheadline)
+                            .fontWeight(.regular)
+                            
                         }
                         .onDelete { index in
                             deleteTime(indexs: index, for: day)

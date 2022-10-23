@@ -21,7 +21,7 @@ struct ContentView: View {
     @State private var tFormatter       = TimeFormatter()
     @State private var timer = Timer.publish(every: 0, on: .main, in: .common).autoconnect()
     @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.date)
+        SortDescriptor(\.date, order: .reverse)
     ]) var days: FetchedResults<DayEntity>
     
     var body: some View {
