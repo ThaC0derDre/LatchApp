@@ -84,10 +84,10 @@
 		318A2EC127E682760080A954 /* Latched */ = {
 			isa = PBXGroup;
 			children = (
-				31AB420A290084C6002800B5 /* CoreDataSetup */,
 				318A2EC227E682760080A954 /* LatchedApp.swift */,
 				31B48A9527F0F13A008DBECC /* Views */,
 				311F370128F8807E0000F1DC /* Utilities */,
+				31AB420A290084C6002800B5 /* CoreDataSetup */,
 				318A2EC827E682770080A954 /* Preview Content */,
 			);
 			path = Latched;

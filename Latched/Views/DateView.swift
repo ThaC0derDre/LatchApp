@@ -54,25 +54,26 @@ extension DateView{
             Section{
                 ForEach(days, id: \.self){ day in
                     DisclosureGroup(day.wrappedDateInfo){
-                        ForEach(day.wrappedTimes, id: \.self){ time in
-                            HStack(alignment: .firstTextBaseline) {
-                                Text(time.wrappedDuration) +
-                                Text(time.wrappedDuration == "1" ? " Minute" : " Minutes")
-                                Spacer()
-                                Text("Finished at: ").bold() +
-                                Text(time.wrappedTimeEnded)
+                        withAnimation{
+                            ForEach(day.wrappedTimes, id: \.self){ time in
+                                HStack(alignment: .firstTextBaseline) {
+                                    Text(time.wrappedDuration) +
+                                    Text(time.wrappedDuration == "1" ? " Minute" : " Minutes")
+                                    Spacer()
+                                    Text("Finished at: ").bold() +
+                                    Text(time.wrappedTimeEnded)
+                                }
+                                .font(.subheadline)
+                                .fontWeight(.regular)
+                                
                             }
-                            .font(.subheadline)
-                            .fontWeight(.regular)
-                            
-                        }
-                        .onDelete { index in
-                            deleteTime(indexs: index, for: day)
+                            .onDelete { index in
+                                deleteTime(indexs: index, for: day)
+                            }
                         }
                     }
-                    .animation(.default)
-                    .font(.title2)
-                    .fontWeight(.bold)
+                        .font(.title2)
+                        .fontWeight(.bold)
                 }
                 .onDelete(perform: deleteDay)
                 

@@ -31,7 +31,7 @@ struct ContentView: View {
                     if !timeCounting { startTimerButton }
                     else { beginCounter }
                     
-                    if timerStopped { timePassed }
+                    if timerStopped { timePassedLabel }
                     
                     viewPreviousTimes
                         .sheet(isPresented: $showTimeView) {
@@ -92,9 +92,10 @@ extension ContentView {
     }
     
     
-    private var timePassed: Text {
+    private var timePassedLabel: Text {
         Text(timeDifference == "0" ? "Zero minutes passed that time." : "Total: \(timeDifference) minutes")
     }
+    
     
     private func trackingButton() -> some View {
         ZStack(alignment:.bottom) {
@@ -102,21 +103,22 @@ extension ContentView {
                 AnimatedButton()
                     .padding(.bottom, 20)
                 Button("END") { buttonAction() }
-                .font(.title2.bold())
-                .padding(80)
-                .foregroundColor(.white)
-                .onReceive(timer) { _ in
-                    if !timeCounting {
-                        self.timer.upstream.connect().cancel()
-                        return
-                    }else {
-                        endTime = tFormatter.getCurrentTime()
-                        minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+                    .font(.title2.bold())
+                    .padding(80)
+                    .foregroundColor(.white)
+                    .onReceive(timer) { _ in
+                        if !timeCounting {
+                            self.timer.upstream.connect().cancel()
+                            return
+                        }else {
+                            endTime = tFormatter.getCurrentTime()
+                            minsPassed = tFormatter.findDateDiff(time1Str: startTime, time2Str: endTime)
+                        }
                     }
-                }
             }
         }
     }
+    
     
     private func buttonAction() {
         timeCounting    = false
@@ -127,19 +129,20 @@ extension ContentView {
         if timeDifference != "" {
             addRecord()
         }
-        
-        func addRecord(){
-            let newTime = TimeEntity(context: moc)
-            newTime.timeEnded = endTime
-            newTime.duration = timeDifference
-            newTime.dateAdded = Date.now
-            
-            newTime.day = DayEntity(context: moc)
-            newTime.day?.date = Date.now
-            newTime.day?.dateInfo = Date.now.displayDate
-            
-            try? moc.save()
-        }
-        
     }
+    
+    
+    private func addRecord(){
+        let newTime = TimeEntity(context: moc)
+        newTime.timeEnded = endTime
+        newTime.duration = timeDifference
+        newTime.dateAdded = Date.now
+        
+        newTime.day = DayEntity(context: moc)
+        newTime.day?.date = Date.now
+        newTime.day?.dateInfo = Date.now.displayDate
+        
+        try? moc.save()
+    }
+    
 }
