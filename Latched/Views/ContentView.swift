@@ -25,7 +25,7 @@ struct ContentView: View {
     ]) var days: FetchedResults<DayEntity>
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack {
                 Form{
                     if !timeCounting { startTimerButton }
